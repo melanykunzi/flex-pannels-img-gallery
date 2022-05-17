@@ -1,0 +1,78 @@
+html {
+    box-sizing: border-box;
+    background: #ffc600;
+    font-size: 20px;
+    font-weight: 200;
+}
+body{
+    margin: 0;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+.panels{
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+.panel{
+    backface-visibility: purple;
+    color: white;
+    text-align: center;
+    align-items: center;
+    transition: 
+    font-size 0.7s cubic-bezier(.02,.57,1,.43),
+    flex 0.7s cubic-bezier(.02,.57,1,.43);
+    font-size: 20px;
+    background-size: cover; /*esto cubre todo el fondo */
+    background-position: center;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.panel1{background-image: url(https://images.unsplash.com/photo-1565784796667-98515d255f7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=407&q=80);}
+.panel2{background-image: url(https://images.unsplash.com/photo-1446038236174-69712e24d137?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80);}
+.panel3{background-image: url(https://images.unsplash.com/photo-1492496913980-501348b61469?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);}
+.panel4{background-image: url(https://images.unsplash.com/photo-1574068468668-a05a11f871da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80);}
+.panel5{background-image: url(https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);}
+/* flex children */
+.panel > * {
+    margin: 0;
+    width: 100%;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.panel > *:first-child {
+    transform: translateY(-100%); /*el texto de arriba*/
+}
+.panel.open-active > *:first-child {
+    transform: translateY(0); /*el texto de arriba*/
+}
+.panel > *:last-child {
+    transform: translateY(100%);/*el texto de abajo, con esto se esconden y aparecen*/
+}
+.panel.open-active > *:last-child {
+    transform: translateY(0);/*el texto de abajo, con esto se esconden y aparecen*/
+}
+.panel p {
+    text-transform: uppercase;
+    font-family: 'Amatic SC', cursive;
+    text-shadow: 0 0 4px rgba(o,o,o,o.72), 0 0 14px rgba(0,0,0,0.45);
+    font-size: 2em;
+}
+.panel p:nth-child(2){
+    font-size: 4em;
+}
+.panel.open { /*cuando el panel tenga la clase open va a pasar los sgte*/
+    flex: 5; /*cuando tenga el flex 5 va a ser mayor q los otros q tiene flex 1*/
+    font-size: 40px;
+
+}
+.cta {
+    color: white;
+    text-decoration: none;
+}
